@@ -10,7 +10,7 @@ app.use(cors());
 app.post('/save', async (req, resp, next) => {
     try{
        
-        console.log(req.body);
+        // console.log(req.body);
         let user = new Email(req.body);
         let result = await user.save(); // details are saved in database
         return resp.status(200).json("Email saved Succssfully");
@@ -22,7 +22,7 @@ app.post('/save', async (req, resp, next) => {
 })
 
 app.post('/emails/:type' , async (req , resp ) => {
-    console.log(req.params.type);
+    // console.log(req.params.type);
     try{
         let emails;
         if(req.params.type==='bin'){
@@ -50,7 +50,7 @@ app.post('/emails/:type' , async (req , resp ) => {
 
 app.post('/save-draft' , async (req , resp) => {
     try{
-        console.log(req.body);
+        // console.log(req.body);
         let user = new Email(req.body);
         let result = await user.save(); // details are saved in database
         return resp.status(200).json("Email saved Succssfully");
